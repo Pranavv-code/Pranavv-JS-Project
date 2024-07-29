@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+        body{
+            background-image: url(dollardollar.jpg);
+            font-family: "Poppins", sans-serif;
+        }
+        .main{
+            width:90%;
+            max-width: 45em;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            position: absolute;
+            background-color: white;
+            padding:2em;
+            border-radius: 0.8em;
+            
+        }
+        .items
+    {
+        display: flex;
+            align-items: center;
+            flex-direction: column;
+    }
+        .icon{
+            width: 9.37em;
+        }
+        .header{
+            font-size: 1.6em;
+            text-transform: uppercase;
+            margin-bottom: 1em;
+        }
+        input#amount{
+            font-weight: 400;
+            font-size: 1.2em;
+            display: block;
+            width: 100%;
+            border-bottom: 2px solid #228B22;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            color: #556B2F;
+            margin-bottom: 2em;
+            padding: 0.5em;
+                    }
+                    input#amount:focus {
+                        color: #556B2F;
+                        border-color: #228B22;
+                    }
+                  input#convert{
+                    color:#228B22;
+                    border-color: #556B2F;
+                  }
+                  select{
+                    width:30%;
+                    padding:0.6em;
+                    font-size: 1em;
+                    color: white;
+                    background-color: forestgreen;
+                  
+                  }
+                 
+                    #result {
+                        font-size: 1.2em;
+                        text-align: center;
+                        margin-top: 1.5em;
+                        color: #02002c;
+                        background-color: #e5dbff;
+                        padding: 0.8em 0;
+}
+    </style>
+
+    <script>
+
+function convert()
+{
+    var from;
+    var to;
+    var am;
+    var finam;
+   
+    am=document.getElementById('amount').value;
+
+    from=document.getElementById('from-currency-select').value;
+    to=document.getElementById('to-curreency-select').value;
+
+  if(from=='U' && to=='n')
+  {
+    finam=am*134;
+    document.getElementById('result').innerHTML=+am+" USD = "+finam+" NPR";
+  }
+  if(from=='U' && to=='u')
+  {
+   
+    document.getElementById('result').innerHTML=+am+" USD = "+am+" USD";
+  }
+  if(from=='U' && to=='i')
+  {
+   finam=am*83.73;
+    document.getElementById('result').innerHTML=+am+" USD = "+finam+" INR";
+  }
+  if(from=='U' && to=='e')
+  {
+   finam=am*0.92;
+    document.getElementById('result').innerHTML=+am+" USD = "+finam+" EUR";
+  }
+  if(from=='U' && to=='a')
+  {
+   finam=am*1.53;
+    document.getElementById('result').innerHTML=+am+" USD = "+finam+" AUD";
+  }
+
+ 
+  if(from=='N' && to=='n')
+  {
+   
+    document.getElementById('result').innerHTML=+am+" NPR = "+am+" NPR";
+  }
+  if(from=='N' && to=='u')
+  {
+   finam=am*0.0075;
+    document.getElementById('result').innerHTML=+am+" NPR = "+finam+" USD";
+  }
+  if(from=='N' && to=='i')
+  {
+   finam=am*0.63;
+    document.getElementById('result').innerHTML=+am+" NPR = "+finam+" INR";
+  }
+  if(from=='N' && to=='e')
+  {
+   finam=am*0.0069;
+    document.getElementById('result').innerHTML=+am+" NPR = "+finam+" EUR";
+  }
+  if(from=='N' && to=='a')
+  {
+   finam=am*0.011;
+    document.getElementById('result').innerHTML=+am+" NPR = "+finam+" AUD";
+  }
+
+ 
+  if(from=='I' && to=='i')
+  {
+   
+    document.getElementById('result').innerHTML=+am+" INR = "+am+" INR";
+  }
+  if(from=='I' && to=='u')
+  {
+   finam=am*0.0012;
+    document.getElementById('result').innerHTML=+am+" INR = "+finam+" USD";
+  }
+  if(from=='I' && to=='n')
+  {
+   finam=am*1.6;
+    document.getElementById('result').innerHTML=+am+" INR = "+finam+" NPR";
+  }
+  if(from=='I' && to=='e')
+  {
+   finam=am*0.011;
+    document.getElementById('result').innerHTML=+am+" INR = "+finam+" EUR";
+  }
+  if(from=='I' && to=='a')
+  {
+   finam=am*0.018;
+    document.getElementById('result').innerHTML=+am+" NPR = "+finam+" AUD";
+  }
+
+ 
+  if(from=='E' && to=='i')
+  {
+   finam=am*90.90;
+    document.getElementById('result').innerHTML=+am+" EUR = "+finam+" INR";
+  }
+  if(from=='E' && to=='u')
+  {
+   finam=am*1.09;
+    document.getElementById('result').innerHTML=+am+" EUR = "+finam+" USD";
+  }
+  if(from=='E' && to=='n')
+  {
+   finam=am*145.41;
+    document.getElementById('result').innerHTML=+am+" EUR = "+finam+" NPR";
+  }
+  if(from=='E' && to=='e')
+  {
+  
+    document.getElementById('result').innerHTML=+am+" EUR = "+am+" EUR";
+  }
+  if(from=='E' && to=='a')
+  {
+   finam=am*1.66;
+    document.getElementById('result').innerHTML=+am+" EUR = "+finam+" AUD";
+  }
+
+
+
+if(from=='A' && to=='i')
+  {
+   finam=am*54.90;
+    document.getElementById('result').innerHTML=+am+" AUD = "+finam+" INR";
+  }
+  if(from=='A' && to=='u')
+  {
+   finam=am*0.66;
+    document.getElementById('result').innerHTML=+am+" AUD = "+finam+" USD";
+  }
+  if(from=='A' && to=='n')
+  {
+   finam=am*87.82;
+    document.getElementById('result').innerHTML=+am+" AUD = "+finam+" NPR";
+  }
+  if(from=='A' && to=='e')
+  {
+  finam=am*0.60
+    document.getElementById('result').innerHTML=+am+" AUD = "+finam+" EUR";
+  }
+  if(from=='A' && to=='a')
+  {
+ 
+    document.getElementById('result').innerHTML=+am+" AUD = "+am+" AUD";
+  }
+}
+        
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="items">
+            <img src="exchange.png" class="icon">
+
+            <h1 class="header">
+                Currency Converter
+            </h1>
+            
+        </div>
+        
+
+    <br>
+
+    <label for="amount">Amount:</label>
+      <input type="number" id="amount" value="100" />
+      
+      <div id="dropdowns">
+        From:-
+        <select id="from-currency-select">
+            <option value="U">USD</option>
+            <option value="N">NPR</option>
+            <option value="I">INR</option>
+            <option value="E">EUR</option>
+            <option value="A">AUD</option>
+        </select>
+        To:-
+        <select id="to-curreency-select">
+            <option value="u">USD</option>
+            <option value="n">NPR</option>
+            <option value="i">INR</option>
+            <option value="e">EUR</option>
+            <option value="a">AUD</option>
+        </select>
+      </div>
+      <br>
+      
+      <div class="results">
+        <input type="submit" value="CONVERT" id="convert" onclick="convert()">
+        <br>
+
+        <p id="result"></p>
+     
+      </div>
+
+    </div>
+</body>
+</html>
